@@ -3,10 +3,28 @@
   <!-- This is used by the StateManager's replicator. -->
   <Section Name="ReplicatorConfig">
     <Parameter Name="ReplicatorEndpoint" Value="ReplicatorEndpoint" />
+    <Parameter Name="BatchAcknowledgementInterval" Value="0.00"/>
+    <!-- Ack back immediately, no batch acking interval-->
+    <Parameter Name="MaxRecordSizeInKB" Value="10240" />
+    <!-- Largest record size that the replicator may write in the log. This value must be a multiple of 4 and greater than 16. This is equivalent to 10 MB. This is being kept high to account for future scalability-->
+    <!--<Parameter Name="OptimizeForLocalSSD" Value="true" />-->
+  </Section>
+  <Section Name="NativeRunConfiguration">
+    <Parameter Name="EnableNativeReliableStateManager" Value="true" />
+    <Parameter Name="Test_LoadEnableNativeReliableStateManager" Value="true"/>
   </Section>
   <!-- This is used for securing StateManager's replication traffic. -->
-  <Section Name="ReplicatorSecurityConfig" />
-
+  <Section Name="ReplicatorSecurityConfig">
+    <Parameter Name="CredentialType" Value="X509" />
+    <Parameter Name="FindType" Value="FindByThumbprint" />
+    <Parameter Name="FindValue" Value="DC825A3E869DE03F4FD58CE61B72304507F4F5E5" />
+    <Parameter Name="StoreLocation" Value="LocalMachine" />
+    <Parameter Name="StoreName" Value="My" />
+    <Parameter Name="ProtectionLevel" Value="EncryptAndSign" />
+  </Section>
+  <!--<Section Name="ApplicationInsights">
+    <Parameter Name="InstrumentationKey" Value="" />
+  </Section>-->
   <!-- Add your custom configuration sections and parameters here. -->
   <!--
   <Section Name="MyConfigSection">

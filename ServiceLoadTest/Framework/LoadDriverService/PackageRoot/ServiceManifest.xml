@@ -8,7 +8,7 @@
     <!-- This is the name of your ServiceType. 
          This name must match the string used in RegisterServiceType call in Program.cs. -->
     <StatelessServiceType ServiceTypeName="LoadDriverServiceType">
-      <PlacementConstraints>gen==true</PlacementConstraints>
+      <PlacementConstraints>tgt==true</PlacementConstraints>
     </StatelessServiceType>
   </ServiceTypes>
 

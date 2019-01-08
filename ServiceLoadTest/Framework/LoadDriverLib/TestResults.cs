@@ -6,6 +6,7 @@
 namespace LoadDriverLib
 {
     using System;
+    using System.Collections.Generic;
     using System.Runtime.Serialization;
 
     [DataContract]
@@ -15,6 +16,7 @@ namespace LoadDriverLib
 
         [DataMember] public long TotalOperationsPerformed;
 
+        [DataMember] public List<string> lockfile = new List<string>();
         private TimeSpan runTime = TimeSpan.Zero;
         private double averageOperationsPerSec = Double.NaN;
         private double averageOperationLatencyMilliseconds = Double.NaN;
@@ -34,6 +36,9 @@ namespace LoadDriverLib
             TestResults r = new TestResults();
             r.OperationLatency100NanoSecRunningTotal = r1.OperationLatency100NanoSecRunningTotal + r2.OperationLatency100NanoSecRunningTotal;
             r.TotalOperationsPerformed = r1.TotalOperationsPerformed + r2.TotalOperationsPerformed;
+            r.lockfile = new List<string>();
+            r.lockfile.AddRange(r1.lockfile);
+            r.lockfile.AddRange(r2.lockfile);
             return r;
         }
 

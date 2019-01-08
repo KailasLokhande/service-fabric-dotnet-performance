@@ -7,7 +7,7 @@
   <ServiceTypes>
     <!-- This is the name of your ServiceType. 
          This name must match the string used in RegisterServiceType call in Program.cs. -->
-    <StatefulServiceType ServiceTypeName="SfDictionaryServiceType" HasPersistedState="true">
+    <StatefulServiceType ServiceTypeName="SfDictionaryServiceType" HasPersistedState="false">
       <PlacementConstraints>tgt==true</PlacementConstraints>
     </StatefulServiceType>
   </ServiceTypes>

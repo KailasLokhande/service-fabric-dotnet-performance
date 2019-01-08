@@ -34,21 +34,21 @@ namespace SfDictionaryService
 
         public async Task SetDataAsync(long key, byte[] data)
         {
-            IReliableDictionary<long, byte[]> dictionary = await this.StateManager.GetOrAddAsync<IReliableDictionary<long, byte[]>>(this.dictionaryName);
+            IReliableDictionary<string, byte[]> dictionary = await this.StateManager.GetOrAddAsync<IReliableDictionary<string, byte[]>>(this.dictionaryName);
             using (ITransaction tx = this.StateManager.CreateTransaction())
             {
-                await dictionary.SetAsync(tx, key, data);
+                await dictionary.SetAsync(tx, key.ToString(), data);
                 await tx.CommitAsync();
             }
         }
 
         public async Task<byte[]> GetDataAsync(long key)
         {
-            IReliableDictionary<long, byte[]> dictionary = await this.StateManager.GetOrAddAsync<IReliableDictionary<long, byte[]>>(this.dictionaryName);
+            IReliableDictionary<string, byte[]> dictionary = await this.StateManager.GetOrAddAsync<IReliableDictionary<string, byte[]>>(this.dictionaryName);
             byte[] result = null;
             using (ITransaction tx = this.StateManager.CreateTransaction())
             {
-                ConditionalValue<byte[]> resultWrapper = await dictionary.TryGetValueAsync(tx, key);
+                ConditionalValue<byte[]> resultWrapper = await dictionary.TryGetValueAsync(tx, key.ToString());
                 result = resultWrapper.Value;
                 await tx.CommitAsync();
             }
