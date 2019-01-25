@@ -17,7 +17,7 @@
   <Section Name="ReplicatorSecurityConfig">
     <Parameter Name="CredentialType" Value="X509" />
     <Parameter Name="FindType" Value="FindByThumbprint" />
-    <Parameter Name="FindValue" Value="DC825A3E869DE03F4FD58CE61B72304507F4F5E5" />
+    <Parameter Name="FindValue" Value="Thumbnail" />
     <Parameter Name="StoreLocation" Value="LocalMachine" />
     <Parameter Name="StoreName" Value="My" />
     <Parameter Name="ProtectionLevel" Value="EncryptAndSign" />

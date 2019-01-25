@@ -1,4 +1,4 @@
-Connect-ServiceFabricCluster -ConnectionEndpoint kailaslltbig1.eastus.cloudapp.azure.com:19000 -KeepAliveIntervalInSec 10 -X509Credential -ServerCertThumbprint DC825A3E869DE03F4FD58CE61B72304507F4F5E5 -FindType FindByThumbprint -FindValue DC825A3E869DE03F4FD58CE61B72304507F4F5E5 -StoreLocation CurrentUser -StoreName My
+Connect-ServiceFabricCluster -ConnectionEndpoint ClusterAddress:19000 -KeepAliveIntervalInSec 10 -X509Credential -ServerCertThumbprint Thumbnail -FindType FindByThumbprint -FindValue Thumbnail -StoreLocation CurrentUser -StoreName My
 Remove-ServiceFabricApplication -ApplicationName fabric:/LoadDriverApplication -Force
 Remove-ServiceFabricApplication -ApplicationName fabric:/SFDictionaryApplication -Force
 Start-Sleep -s 150

@@ -44,7 +44,7 @@ namespace LoadDriverLib
             this.numOutstandingOperations = numOutstandingOperations;
             this.numItems = numItems;
             this.testResults = new TestResults();
-            CloudStorageAccount storageAccount = CloudStorageAccount.Parse("DefaultEndpointsProtocol=https;AccountName=kailaslsaai;AccountKey=XjdcJGjs97UDCJTmlMehQxUk+b4sa/iqgeemGDapfVZi9+a6dXQSbWAjx0Qx/j8WrnvIQiDhgoWgFmfhxvK7LA==;EndpointSuffix=core.windows.net");
+            CloudStorageAccount storageAccount = CloudStorageAccount.Parse("AddStorageAccountConnectHere");
 
             // Create the table client.
             CloudTableClient tableClient = storageAccount.CreateCloudTableClient();

@@ -38,7 +38,7 @@ namespace ServiceLoadTestClient
 
         private static void PrintResult()
         {
-            CloudStorageAccount storageAccount = CloudStorageAccount.Parse("DefaultEndpointsProtocol=https;AccountName=kailaslsaai;AccountKey=XjdcJGjs97UDCJTmlMehQxUk+b4sa/iqgeemGDapfVZi9+a6dXQSbWAjx0Qx/j8WrnvIQiDhgoWgFmfhxvK7LA==;EndpointSuffix=core.windows.net");
+            CloudStorageAccount storageAccount = CloudStorageAccount.Parse("AddStorageAccountConnectHere");
 
             // Create the table client.
             CloudTableClient tableClient = storageAccount.CreateCloudTableClient();
@@ -151,7 +151,7 @@ namespace ServiceLoadTestClient
                     (int)parameters.ParameterValues[Parameters.Id.ReverseProxyPort]),
                 partitionList);
 
-            CloudStorageAccount storageAccount = CloudStorageAccount.Parse("DefaultEndpointsProtocol=https;AccountName=kailaslsaai;AccountKey=XjdcJGjs97UDCJTmlMehQxUk+b4sa/iqgeemGDapfVZi9+a6dXQSbWAjx0Qx/j8WrnvIQiDhgoWgFmfhxvK7LA==;EndpointSuffix=core.windows.net");
+            CloudStorageAccount storageAccount = CloudStorageAccount.Parse("AddStorageAccountConnectHere");
 
             // Create the table client.
             CloudTableClient tableClient = storageAccount.CreateCloudTableClient();
@@ -216,7 +216,7 @@ namespace ServiceLoadTestClient
 
         private static async Task WaitForLockAsync(string testname, System.Collections.Generic.List<string> lockfile)
         {
-            string storageConnectionString = "DefaultEndpointsProtocol=https;AccountName=kailaslsaai;AccountKey=BiND7baqFuk+oV1xaJKHZOtM8Em9kVUHU5vqVWFZuKyofnmD/nt9wjcOECys26JMoOLcyvCYGMrOq7xICp5Mng==;EndpointSuffix=core.windows.net";
+            string storageConnectionString = "StorageAccountConnectionUrl";
             Microsoft.WindowsAzure.Storage.CloudStorageAccount account;
             Microsoft.WindowsAzure.Storage.CloudStorageAccount.TryParse(storageConnectionString, out account);
 

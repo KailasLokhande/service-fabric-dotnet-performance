@@ -35,7 +35,7 @@ namespace LoadDriverLib
 
         public async Task AcquireDistributedLock(string owner)
         {
-            string storageConnectionString = "DefaultEndpointsProtocol=https;AccountName=kailaslsaai;AccountKey=BiND7baqFuk+oV1xaJKHZOtM8Em9kVUHU5vqVWFZuKyofnmD/nt9wjcOECys26JMoOLcyvCYGMrOq7xICp5Mng==;EndpointSuffix=core.windows.net";
+            string storageConnectionString = "StorageAccountConnectionUrl";
             CloudStorageAccount account;
             CloudStorageAccount.TryParse(storageConnectionString, out account);
 
@@ -48,7 +48,7 @@ namespace LoadDriverLib
 
         public async Task ReleaseDistributedLock(string owner)
         {
-            string storageConnectionString = "DefaultEndpointsProtocol=https;AccountName=kailaslsaai;AccountKey=BiND7baqFuk+oV1xaJKHZOtM8Em9kVUHU5vqVWFZuKyofnmD/nt9wjcOECys26JMoOLcyvCYGMrOq7xICp5Mng==;EndpointSuffix=core.windows.net";
+            string storageConnectionString = "StorageAccountConnectionUrl";
             CloudStorageAccount account;
             CloudStorageAccount.TryParse(storageConnectionString, out account);
 
@@ -61,7 +61,7 @@ namespace LoadDriverLib
 
         public async Task UploadTestResults(string type, TestResults results)
         {
-            string storageConnectionString = "DefaultEndpointsProtocol=https;AccountName=kailaslsaai;AccountKey=BiND7baqFuk+oV1xaJKHZOtM8Em9kVUHU5vqVWFZuKyofnmD/nt9wjcOECys26JMoOLcyvCYGMrOq7xICp5Mng==;EndpointSuffix=core.windows.net";
+            string storageConnectionString = "StorageAccountConnectionUrl";
             CloudStorageAccount account;
             CloudStorageAccount.TryParse(storageConnectionString, out account);
 
